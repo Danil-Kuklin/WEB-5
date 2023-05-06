@@ -1,0 +1,14 @@
+{
+  "name": "web-5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "test": "echo \"Nice test\" && exit 1"
+  },
+  "author": "Kuklin",
+  "license": "ISC",
+  "description": ""
+}
