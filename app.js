@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
         if(req.url === '/'){
             console.log(`Получен ${req.method} запрос на корневой путь`)
             res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-            res.end('Hello');
+            res.end('Приветсвуем');
 
         }
         else if(req.url === "/stats"){
@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
         else if(req.url === "/comments"){
             console.log(`Получен ${req.method}-запрос на /comments`);
 			res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-			res.end(`${com}`);
+			res.end(`${comments}`);
         }
         else{
             res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
                     let param = JSON.parse(users);
                     com += JSON.stringify(param);
                     console.log(param);
-                    res.end("Данные успешно отправлены!");
+                    res.end("Данные успешно отправлены");
                 });
             }
             
@@ -63,4 +63,8 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
     console.log(`Начало работы сервера http://${HOST}:${PORT}`)
-});
+})
+
+server.on("connection", () => {
+    console.log("Новое подключение");
+  });
