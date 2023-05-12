@@ -1,4 +1,4 @@
 POST /comments HTTP/1.1
-Host: "127.0.0.1":5500
+Host: 127.0.0.1:5500
 
 {"name":"TestName","age":12}
