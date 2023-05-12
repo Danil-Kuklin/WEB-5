@@ -1,6 +1,6 @@
 const http = require('http');
 
-const HOST = 'localhost';
+const HOST = "127.0.0.1";
 const PORT = 5500;
 let count = {user_agent: 0};
 let comments = '';
@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
         if(req.url === '/'){
             console.log(`Получен ${req.method} запрос на корневой путь`)
             res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-            res.end('Приветсвуем');
+            res.end('Hello');
 
         }
         else if(req.url === "/stats"){
@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
 
                 req.on("end", () => {
                     let param = JSON.parse(users);
-                    com += JSON.stringify(param);
+                    comments += JSON.stringify(param);
                     console.log(param);
                     res.end("Данные успешно отправлены");
                 });
@@ -67,4 +67,4 @@ server.listen(PORT, HOST, () => {
 
 server.on("connection", () => {
     console.log("Новое подключение");
-  });
+});

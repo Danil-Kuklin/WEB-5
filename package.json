@@ -7,7 +7,6 @@
   },
   "scripts": {
     "test": "echo \"Nicetest\" && exit 1",
-    "start": "node app.js",
     "serve": "nodemon app.js"
     
   },
