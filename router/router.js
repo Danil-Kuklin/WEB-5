@@ -47,7 +47,7 @@ router.post("/comments", jsonParser, validation, (req, res) => {
 });
   
 router.use((req, res, next) =>{
-    res.status(400).send('Not Found');
+    res.status(404).send('Not Found');
 });
 
 module.exports = router;
