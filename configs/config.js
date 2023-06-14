@@ -5,6 +5,6 @@ db.connect("mongodb://127.0.0.1:27017/8", {
 	useUnifiedTopology: true,
 })
 .then(() => console.log('Connected to the db'))
-.catch(err => console.log('errror', err));
+.catch(err => console.log('error', err));
 
 module.exports = db;

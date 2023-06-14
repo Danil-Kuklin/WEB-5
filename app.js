@@ -16,9 +16,6 @@ app.use(helmet());
 app.use("/db", dbAPI);
 
 
-
-
-
 app.listen(PORT, HOST, () => {
 	console.log(`Начало работы сервера http://${HOST}:${PORT}`);
   });
