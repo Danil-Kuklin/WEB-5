@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.use("/v1", router);
 app.use(morgan('tiny'));
 app.use(helmet());
-app.use("/db", dbAPI);
+app.use("/v2", dbAPI);
 
 
 app.listen(PORT, HOST, () => {

@@ -2,3 +2,72 @@ POST /v1/comments HTTP/1.1
 Host: 127.0.0.1:5500
 
 {"name":"TestName","age":12}
+
+### POST в apikeys
+
+POST /v2/api HTTP/1.1
+Host: 127.0.0.1:5500
+content-type: application/json
+
+{
+    "name":"testname",
+    "key":""
+}
+
+### DELETE из apikeys
+
+DELETE /v2/api/e748d3ab7aa6ecd7 HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+### POST в models
+
+POST /v2/models?key=c0801fe1924f64c4 HTTP/1.1
+Host: 127.0.0.1:5500
+content-type: application/json
+
+{
+    "name":"test123123ame546546456",
+    "modelname":"1",
+    "modeltype":"1",
+    "object":"testobj",
+    "description":"testdesc",
+    "comments":"testcomm",
+    "data":25.11,
+    "datachange":22.10
+}
+
+### DELETE из models
+
+DELETE /v2/models/6489f2e4d5d2a18ea6c1310c?key=7446bcb15c8dc3bf HTTP/1.1
+Host: 127.0.0.1:5500
+
+### PUT в models
+
+PUT  /v2/models/6489f4d1d2b0a0226b59a1da?key=7446bcb15c8dc3bf HTTP/1.1
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "name":"testingname",
+    "modelname":"1",
+    "modeltype":"1",
+    "object":"testobj",
+    "description":"testdesc",
+    "comments":"testcomm",
+    "data":25.11,
+    "datachange":22.10
+}
+
+### GET в models
+
+GET /v2/models?key=7446bcb15c8dc3bf HTTP/1.1
+Host: 127.0.0.1:5500
+
+### GET в models по ID
+
+GET /v2/models/6489f4d1d2b0a0226b59a1da?key=7446bcb15c8dc3bf HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
